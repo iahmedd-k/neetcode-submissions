@@ -1,9 +1,10 @@
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
-        seen=set()
-        for i in nums:
-            if i in seen:
-                return True
-            seen.add(i)
+    def removeElement(self, nums: List[int], val: int) -> int:
+        k=0
+
+        for i in range(len(nums)):
+            if nums[i]!=val:
+                nums[k]=nums[i]
+                k+=1
         
-        return False
+        return k
